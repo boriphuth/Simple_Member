@@ -24,7 +24,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li><a href="member.html">All Member</a></li>
-              <li class="active"><a href="register.html">Create Member</a></li>
+              <li class="active"><a href="edit.html">Create Member</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -33,40 +33,40 @@
 <br/><br/>
 
 <!-- content -->
-<form class="form-horizontal" action="save.html" method="post">
+<form class="form-horizontal" action="edit.html" method="post">
 	<fieldset>
 	<legend>Edit</legend>
 	<div class="control-group">
 		<label class="control-label" for="id-card">Id Card</label>
 		<div class="controls">
-			<input type="text" id="id-card" name="idCard" class="span5" required /> <label class="help-block help-inline"></label>
+			<input type="text" id="id-card" name="idCard" class="span5" required value = ${member.idCard}/> <label class="help-block help-inline"></label>
 		</div>
 	</div>
 	
 	<div class="control-group">
-		<label class="control-label" for="name">firstname</label>
+		<label class="control-label" for="name">Name</label>
 		<div class="controls">
-			<input type="text" id="name" name="name" class="span5" required /> <label class="help-block help-inline"></label>
+			<input type="text" id="name" name="name" class="span5" required value = ${member.name} /><label class="help-block help-inline"></label>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="lastname">Lastname</label>
 		<div class="controls">
-			<input type="text" id="lastname" name="lastname" class="span5" required /> <label class="help-block help-inline"></label>
+			<input type="text" id="lastname" name="lastname" class="span5" required value = ${member.lastname} /> <label class="help-block help-inline"></label>
 		</div>
 	</div>
 	
 	<div class="control-group">
 		<label class="control-label" for="gender">Gender</label>
 		<div class="controls">
-			<input type="text" id="gender" name="gender" class="span5" required /> <label class="help-block help-inline"></label>
+			<input type="text" id="gender" name="gender" class="span5" required value =${member.gender} /> <label class="help-block help-inline"></label>
 		</div>
 	</div>
 	
 	<div class="control-group">
 		<label class="control-label" for="age">Age</label>
 		<div class="controls">
-			<input type="number" id="age" name="age" class="span5" required /> <label class="help-block help-inline"></label>
+			<input type="number" id="age" name="age" class="span5" required value = ${member.age} /><label class="help-block help-inline"></label>
 		</div>
 	</div>
 	

@@ -24,7 +24,7 @@ public class MemberController {
 		try {
 			List<Member> memberList = memberService.findAll();
 			ModelAndView model = new ModelAndView();
-			model.addObject("memberList1", memberList);
+			model.addObject("memberList", memberList);
 			model.setViewName("member");
 			return model;
 		} catch (Exception e) {
@@ -57,6 +57,8 @@ public class MemberController {
 			ModelAndView mav = new ModelAndView();
 			Member member = memberService.findById(id);
 			mav.addObject("member", member);
+			mav.setViewName("edit");
+			return mav;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

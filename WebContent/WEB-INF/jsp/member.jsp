@@ -57,7 +57,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="member" items="${memberList1}">
+			<c:forEach var="member" items="${memberList}">
 				<tr>
 					<td>${member.id}</td>
 					<td>${member.idCard}</td>
@@ -65,10 +65,9 @@
 					<td>${member.lastname}</td>
 					<td>${member.gender}</td>
 					<td>${member.age}</td>
-					<td><a href="javascript:void(0);"
+					<td><a href="${pageContext.request.contextPath}/edit_page.html?id=${member.id}"
 						class="btn btn-primary btn-edit" data-id="${member.id}">edit</a> <a
-						href="javascript:void(0);" class="btn btn-danger btn-delete"
-						data-id="${member.id}">delete</a></td>
+						href="javascript:void(0);" class="btn btn-danger btn-delete" data-id="${member.id}">delete</a></td>
 				</tr>
 			</c:forEach>
 
@@ -91,6 +90,27 @@
 					success : function(data) {
 						if (data == "success") {
 							//add effect
+						} else {
+							//add effect
+						}
+					}
+				});
+			});
+		});
+		$(function() {
+			$(".btn-edit").click(function() {
+				//alert($(this).data("id"));
+				var memberId = $(this).data("id");
+				//$(this).parent().parent().fadeOut('slow');
+				$.ajax({
+					url : "edit_page.html",
+					data : {
+						id : memberId
+					},
+					type : "GET",
+					success : function(data) {
+						if (data == "success") {
+							alert($(this).data("id"));
 						} else {
 							//add effect
 						}
